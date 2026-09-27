@@ -636,10 +636,10 @@ const VIEWS = {
       : `<tr><td colspan="4" class="meta">No entries yet — tell Waku how an account did today.</td></tr>`;
 
     return `<div class="tiles">${totalTiles || '<div class="meta">No P&amp;L logged yet.</div>'}</div>
-      <h3 style="margin-top:20px">By account</h3>
+      <h3 style="margin-top:var(--space-6)">By account</h3>
       <table class="datatable"><thead><tr><th>Account</th><th>Total P&amp;L</th></tr></thead>
       <tbody>${accountRows}</tbody></table>
-      <h3 style="margin-top:20px">Daily P&amp;L</h3>
+      <h3 style="margin-top:var(--space-6)">Daily P&amp;L</h3>
       <table class="datatable"><thead><tr><th>Date</th><th>Account</th><th>P&amp;L</th><th>Note</th></tr></thead>
       <tbody>${pnlRows}</tbody></table>`;
   },
@@ -655,12 +655,12 @@ const VIEWS = {
       const body = rows.map(i => `<tr>
           <td>${esc(i.company)}</td><td>${esc(i.role)}</td><td>${esc(i.round||"")}</td>
           <td>${esc(i.channel||"")}</td><td>${esc(i.notes||"")}</td></tr>`).join("");
-      return `<h3 style="margin-top:20px">${esc(status)} (${rows.length})</h3>
+      return `<h3 style="margin-top:var(--space-6)">${esc(status)} (${rows.length})</h3>
         <table class="datatable"><thead><tr><th>Company</th><th>Role</th><th>Round</th><th>Channel</th><th>Notes</th></tr></thead>
         <tbody>${body}</tbody></table>`;
     }).join("");
 
-    return interviews.length ? groups : `<div class="card empty">No interviews logged yet.</div>`;
+    return interviews.length ? groups : uiCard("No interviews logged yet.", {cls: "empty"});
   },
   ops(d){
     const s = d.stats;

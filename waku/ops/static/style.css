@@ -98,7 +98,7 @@
   h2{font-family:var(--face-mono);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:var(--tracking-label);color:var(--text-muted);
      font-weight:var(--font-weight-medium);margin:var(--space-6) 0 var(--space-2)}
   .datatable{width:100%;border-collapse:collapse;margin-top:var(--space-2)}
-  .datatable th,.datatable td{text-align:left;padding:6px 10px;border-bottom:var(--rule-width) solid var(--rule)}
+  .datatable th,.datatable td{text-align:left;padding:calc(var(--spacing) * 1.5) var(--space-2);border-bottom:var(--rule-width) solid var(--rule)}
   .neg{color:var(--bad)}
   .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:var(--space-2)}
   
